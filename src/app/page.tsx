@@ -777,7 +777,7 @@ export default function Home() {
         </section>
 
         <footer className="mt-16 border-t border-[#e8ece9] py-8 text-center text-xs leading-5 text-[#607067] flex flex-col gap-2">
-          <p>निवाण (Nivaran) — Prototype using synthetic banking data. Not affiliated with any real financial institution.</p>
+          <p>निवारण (Nivaran) — Prototype using synthetic banking data. Not affiliated with any real financial institution.</p>
           <p className="text-[#9daaa2]">All outcomes, transactions, and state resolutions are simulated demo states.</p>
         </footer>
       </div>
