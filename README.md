@@ -1,4 +1,4 @@
-# <p align="center">🏛️ <b>NIVARAN · निवारण</b></p>
+# <p align="center">🇮🇳 <b>NIVARAN · निवारण</b></p>
 
 <p align="center">
   <b>Banking problems, resolved. Turn confusing digital payment failures into clear, guided resolution journeys.</b>
