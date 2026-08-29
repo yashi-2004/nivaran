@@ -1,4 +1,4 @@
-# <p align="center"><img src="https://raw.githubusercontent.com/lucide-react/lucide/main/icons/landmark.svg" width="48" height="48" style="vertical-align: middle; margin-right: 10px;" /> <b>NIVARAN · निवारण</b></p>
+# <p align="center">🏛️ <b>NIVARAN · निवारण</b></p>
 
 <p align="center">
   <b>Banking problems, resolved. Turn confusing digital payment failures into clear, guided resolution journeys.</b>
