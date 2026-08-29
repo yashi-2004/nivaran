@@ -510,7 +510,7 @@ export default function ResolutionPage() {
 
         {/* Footer */}
         <footer className="mt-12 border-t border-[#dce5de] py-6 text-center text-xs leading-5 text-[#607067] flex flex-col gap-1.5">
-          <p>निवाण (Nivaran) — Prototype using synthetic banking data. Not affiliated with any real bank.</p>
+          <p>निवारण (Nivaran) — Prototype using synthetic banking data. Not affiliated with any real bank.</p>
           <p className="text-[#a0aca3]">All processes and status modifications represent simulated user interface logic.</p>
         </footer>
       </div>

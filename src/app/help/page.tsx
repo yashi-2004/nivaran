@@ -476,7 +476,7 @@ function HelpContent() {
 
         {/* Footer */}
         <footer className="mt-12 border-t border-[#dce5de] py-6 text-center text-xs leading-5 text-[#607067] flex flex-col gap-1.5">
-          <p>निवाण (Nivaran) — Prototype using synthetic banking data. Not affiliated with any bank.</p>
+          <p>निवारण (Nivaran) — Prototype using synthetic banking data. Not affiliated with any bank.</p>
           <p className="text-[#a0aca3]">All advice and check scenarios represent simulated demo actions.</p>
         </footer>
       </div>
