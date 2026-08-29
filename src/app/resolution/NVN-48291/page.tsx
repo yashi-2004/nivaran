@@ -386,7 +386,7 @@ export default function ResolutionPage() {
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#375247]">
                     {outcomeType === "refunded"
-                      ? "In this simulated outcome, ₹5,000 was reversed back to Aarav Sharma's account (XXXX 4821). Balance updated successfully."
+                      ? "In this simulated outcome, ₹5,000 was reversed back to Yash Sharma's account (XXXX 4821). Balance updated successfully."
                       : "In this simulated outcome, the payment was resolved forward. Rahul Sharma received ₹5,000 successfully."}
                   </p>
                   <p className="mt-3 text-xs font-medium text-[#78867e] border-t border-[#b9d8c8] pt-2">

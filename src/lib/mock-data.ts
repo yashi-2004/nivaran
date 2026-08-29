@@ -17,7 +17,7 @@ export type Transaction = {
 };
 
 export const demoUser = {
-  name: "Aarav Sharma",
+  name: "Yash Sharma",
   maskedAccount: "XXXX 4821",
   balance: 72430,
 };
