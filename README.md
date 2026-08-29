@@ -1,113 +1,101 @@
-# 🇮🇳 NIVARAN (निवारण) — Banking Problems, Resolved.
+# <p align="center"><img src="https://raw.githubusercontent.com/lucide-react/lucide/main/icons/landmark.svg" width="48" height="48" style="vertical-align: middle; margin-right: 10px;" /> <b>NIVARAN · निवारण</b></p>
 
-Nivaran is a digital resolution layer built for the anxious, frustrating moments of digital-banking failures. 
+<p align="center">
+  <b>Banking problems, resolved. Turn confusing digital payment failures into clear, guided resolution journeys.</b>
+</p>
 
-When a transaction fails, a login gets blocked, or an OTP doesn't arrive, traditional banking apps display vague errors like *"Transaction failed"* or *"Unable to process request"* and direct users to call support or visit a branch. **Nivaran turns these confusing errors into a clear, guided digital resolution journey.**
-
-> **⚠️ Prototype Notice:** This system operates using 100% synthetic banking data. It is not affiliated with, sponsored by, or connected to any real financial institution or public service (such as NPCI, BHIM, or UPI).
-
----
-
-## 1. The Core Problem
-
-Digital payments in India operate at massive scale, but when transactions fail, users are left in the dark with major anxieties:
-* *Was my money deducted?*
-* *Should I retry or will I get charged twice?*
-* *Is my PIN blocked or is the bank server down?*
-* *How do I explain this problem to customer support?*
-
-Nivaran bridges the gap between raw, technical system logs and plain-language guidance.
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16.3-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenAI-GPT--4o--mini-412991?style=for-the-badge&logo=openai&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+</p>
 
 ---
 
-## 2. The Product Promise
+## 📌 The Challenge (The "Anxious Moment")
 
-Nivaran implements the following end-to-end resolution journey:
+Digital payments in India operate at a massive scale, but when transactions fail, users are left in the dark with vague system errors like *"Transaction failed"* or *"Unable to process request"*. 
+
+This creates immediate anxiety: **Was my money debited? Should I retry? Who do I call?** Retrying blindly often leads to double debits, and explaining technical errors to support staff requires repeating the same story multiple times.
+
+**Nivaran bridges the gap between raw, cryptic backend log data and human reassurance.**
+
+---
+
+## ⚡ Problem & Solution Matrix
+
+| The Moment | Current Pain Point | Nivaran's Resolution |
+| :--- | :--- | :--- |
+| **Transaction Failure** | Vague system codes; user retries immediately, causing duplicate charges. | Prominent warning: **"⚠️ Don't try the payment again yet"** based on real-time log checks. |
+| **Log Diagnosis** | Vague error screens; no plain English explanation of the server issue. | OpenAI parses mock log tables to deliver calm, context-specific explanations. |
+| **Filing a Complaint** | Filling long forms; repeating the transfer details to support agents. | **Auto-packaged grievance tickets** enclosing system metadata and editable statements. |
+| **Authentication Locks** | Lockouts with no instructions on how to reset MPIN or TPIN safely. | Polished diagnostic checklists detailing secure manual recovery procedures. |
+
+---
+
+## ⚙️ AI Safety & Isolation Boundary
+
+To comply with strict security standards, Nivaran enforces a **one-way read-only boundary** separating the AI model from the financial transactional layers.
 
 ```
-[System Error Occurs] 
-       ↓
-[Nivaran Diagnoses Log Context]
-       ↓
-[AI Explanation of Root Cause] 
-       ↓
-[Self-Help Checklist & Actions to Avoid] (e.g. "Don't retry yet!")
-       ↓
-[Auto-Packaged Resolution Request] (No repeating stories to agents)
-       ↓
-[Simulated Case Tracking ID]
-       ↓
-[Deterministic Simulated Resolution] (Reversal or Credit Outcome)
+┌────────────────────────────────┐
+│   Mock Banking Engine (Logs)   │  ◄── (Source of Truth in Memory)
+└───────────────┬────────────────┘
+                │
+                ▼ (Structured Context Only)
+┌────────────────────────────────┐
+│      OpenAI GPT-4o-mini        │  ◄── (Strict Schema / JSON Mode)
+└───────────────┬────────────────┘
+                │
+                ▼ (Calming Human Explanation)
+┌────────────────────────────────┐
+│     Citizen Interface UI       │  ◄── (Zero Write Access to PINs/OTPs)
+└────────────────────────────────┘
 ```
+
+> [!IMPORTANT]
+> **Safety Guardrails**: 
+> * The LLM has **NO write access** to bank accounts. It cannot move money, change balances, reset PINs, or trigger transactions.
+> * Banners are integrated across the UI to remind users: *"Never share an OTP, password, PIN, or CVV. Nivaran will never ask for them."*
+> * All data and logins utilized in this prototype are completely synthetic.
 
 ---
 
-## 3. The Hero Journey (Demo Guide)
+## 🛠️ Resilient Offline Fallback
 
-To test the application as a **Hackathon Judge**, follow this exact workflow:
-
-1. **0–10 seconds (Understand)**: Open the homepage. Read the core premise and view the Quick Demo panel.
-2. **10–30 seconds (Frictionless Start)**: Click **Try Demo** on the hero card OR select **Money was deducted** in the wizard. Either option immediately redirects you to the diagnosed transaction page.
-3. **30–60 seconds (Diagnosis)**: Inspect the ₹5,000 failed transfer to Rahul Sharma. Review the high-contrast alert: **⚠️ Don't try the payment again yet**, followed by the AI Explanation of why the IMPS processing layer failed after debiting your balance.
-4. **60–90 seconds (Create Resolution)**: Click **Start Resolution**. Review the automatically prepared resolution request containing the transaction ID, date, and status. Edit the description statement, and click **Create Resolution Request** to generate Case ID `NVR-2026-48291`.
-5. **90–120 seconds (Track & Resolve)**: Toggle the simulated final state (choose between **Simulated Refund** or **Simulated Credit**) and click **Resolve Demo Case** to see the deterministic final outcome.
+Nivaran is built for real-world resilience (slow mobile networks or API outages):
+1. **Explanation Fallback**: If the OpenAI completions endpoint fails, Nivaran immediately serves pre-templated diagnostic statements mapped to the status code.
+2. **Natural Language Fallback**: A local keyword/regex parser processes text searches on the homepage, routing common inputs (e.g. "debit", "tpin", "sms") to correct guides without requiring server-side API roundtrips.
 
 ---
 
-## 4. Technical Architecture & AI Safety
+## 🚀 The 2-Minute Reviewer Walkthrough
 
-Nivaran enforces a **strict unidirectional flow** between the simulated banking data layer and the LLM interpretative layer to guarantee transaction safety.
+Reviewers can experience the complete citizen journey from start to finish:
 
-### AI Safety Isolation Boundary
-
-```
-[Synthetic Banking Logs] (Source of truth)
-        │
-        ▼ (Structured Context Only)
-[OpenAI Chat Completions API] (gpt-4o-mini + JSON Schema)
-        │
-        ▼ (Natural Language Interpretation)
-[User Interface Guidance] ( Calming, readable explanations )
-```
-
-* **The Mock Banking Engine** (defined in [`mock-data.ts`](file:///Users/yashi/Desktop/nivaran/nivaran/src/lib/mock-data.ts)) contains all balances, transaction logs, and account statuses. It is the absolute source of truth.
-* **The OpenAI Integration** (defined in [`api/explain/route.ts`](file:///Users/yashi/Desktop/nivaran/nivaran/src/app/api/explain/route.ts) and [`api/diagnose/route.ts`](file:///Users/yashi/Desktop/nivaran/nivaran/src/app/api/diagnose/route.ts)) performs only **interpretation, classification, and explanation generation**.
-* **AI Restrictions**: The AI has **NO access** to write actions. It cannot move money, change balances, reset PINs, generate OTPs, or validate credentials. All database updates are handled deterministically in client/server code.
-* **Security Guardrails**: Nivaran explicitly prevents users from inputting sensitive details. Banners warn: *"Never share an OTP, password, PIN, CVV, or Aadhaar."*
-
-### Deterministic Fallback Engine
-If the OpenAI API key is missing or the endpoint times out, Nivaran automatically falls back to:
-1. **Explanation Fallback**: Pre-templated context-aware status logs to explain current resolution progress.
-2. **Diagnosis Fallback**: A local keyword/regex-based classifier that maps common search terms (e.g. "debit", "tpin", "sms", "lock") to correct help pages.
-
-The application is guaranteed **never to break** due to an AI API failure.
+* **0:00 - 0:30 (Frictionless Start)**: Tap **Try Demo** on the hero card. This immediately launches the hero journey for Yash Sharma's failed transaction.
+* **0:30 - 1:00 (Diagnostic Check)**: Inspect the failed ₹5,000 transfer to Rahul Sharma. Review the log diagnostic status cards (Authentication, Account, Processing, Service) and read the custom AI explanation.
+* **1:00 - 1:30 (Package Grievance)**: Click **Start Resolution**, verify the auto-populated metadata, customize the statement description, and generate Case ID `NVR-2026-48291`.
+* **1:30 - 2:00 (Simulated Outcome)**: Toggle the final state (choose between **Simulated Refund** or **Simulated Credit**) and resolve the case to see how the system closes the tracking ticket.
+* **Extra Credit**: Return to the homepage and search *"my TPIN isn't working"* or *"session expired"* to test the natural language diagnosis routing.
 
 ---
 
-## 5. Deployment Guide
+## 💻 Local Setup & Development
 
-The app is built to run server-side or deploy instantly to Vercel/Netlify.
-
-### Environment Setup
-Create a `.env.local` file in the `nivaran` subfolder:
+Create a `.env.local` file in the root of the `nivaran` folder:
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_MODEL=gpt-4o-mini
 ```
 
-### Local Development
+Run the development server:
 ```bash
 cd nivaran
 npm install
 npm run dev
 ```
-Navigate to `http://localhost:3000`.
 
----
-
-## 6. Simulated Limitations
-
-For the purposes of this hackathon prototype:
-1. All account balances (Aarav Sharma - `XXXX 4821` - `₹72,430`) are simulated and reside in memory.
-2. No real API requests are routed to UPI, IMPS, NPCI, or partner banks.
-3. MPIN/TPIN guides walk users through safe, manual official bank recovery flows without storing or resetting actual secrets.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
